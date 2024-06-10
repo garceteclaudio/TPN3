@@ -1,5 +1,5 @@
-class Cuerpo {
-  PVector posicion;
+class Cuerpo extends GameObject{
+  
   
   Cuerpo(PVector posicion) {
     this.posicion = posicion;

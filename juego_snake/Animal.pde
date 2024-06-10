@@ -1,4 +1,4 @@
-abstract class Animal {
+abstract class Animal extends GameObject{
   PVector posicion;
   PImage imagen;
   int puntaje;

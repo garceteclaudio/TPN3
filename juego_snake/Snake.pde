@@ -1,7 +1,7 @@
-class Snake {
+class Snake extends GameObject implements IMoveable{
   PVector cabeza;
   ArrayList<Cuerpo> cuerpo;
-  PVector direccion;
+
   
   Snake() {
     cabeza = new PVector(width / 2, height / 2);
@@ -11,6 +11,7 @@ class Snake {
     cuerpo.add(new Cuerpo(new PVector(cabeza.x - 40, cabeza.y)));
   }
   
+  @Override
   void mover() {
     if (keyPressed) {
       if (key == 'w') direccion.set(0, -1);
@@ -33,5 +34,14 @@ class Snake {
     }
   }
   
-
+  boolean comer(Animal animal) {
+    // Verificar colisión con un margen para compensar la diferencia de posiciones
+    float margen = 40;
+    if (abs(cabeza.x - animal.posicion.x) < margen && abs(cabeza.y - animal.posicion.y) < margen) {
+      // Añadir una nueva parte al cuerpo para crecer
+      cuerpo.add(new Cuerpo(cabeza.copy()));
+      return true;
+    }
+    return false;
+  }
 }
