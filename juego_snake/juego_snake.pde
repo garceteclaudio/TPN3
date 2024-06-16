@@ -77,7 +77,7 @@ void spawnAnimal() {
     animales.add(new Insectos(posicion, insectoImg));
   }
 }
-
+/// hacer Hub
 void mostrarHistorial() {
   for (int i = 0; i < historial.size(); i++) {
     text(historial.get(i), 10, 60 + i * 20);
