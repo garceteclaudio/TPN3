@@ -1,1 +1,1 @@
-![Trabajo práctico N°3](TP3 - Enunciado.png)
+![Screenshot](TP3.png)
