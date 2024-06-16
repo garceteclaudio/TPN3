@@ -1,14 +1,36 @@
-// Clase Transform para manejar la ubicación
+// Clase Transform
 class Transform {
-  float x, y;
-  
-  Transform(float x, float y) {
-    this.x = x;
-    this.y = y;
+  private PVector position;
+
+  public Transform(float x, float y) {
+    this.position = new PVector(x, y);
   }
-  
-  void mover(float dx, float dy) {
-    x += dx;
-    y += dy;
+
+  public PVector getPosition() {
+    return this.position;
+  }
+
+  public void setPosition(PVector position) {
+    this.position = position;
+  }
+
+  public void mover(float dx, float dy) {
+    this.position.add(dx, dy);
+  }
+
+  public float getX() {
+    return this.position.x;
+  }
+
+  public float getY() {
+    return this.position.y;
+  }
+
+  public void setX(float x) {
+    this.position.x = x;
+  }
+
+  public void setY(float y) {
+    this.position.y = y;
   }
 }

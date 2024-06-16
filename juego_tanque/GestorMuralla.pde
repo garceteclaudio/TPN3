@@ -1,21 +1,21 @@
 // Clase GestorMurallas
 class GestorMurallas {
   ArrayList<Muro> muros;
-  
+
   GestorMurallas() {
     muros = new ArrayList<Muro>();
   }
-  
+
   void agregarMuro(Muro muro) {
     muros.add(muro);
   }
-  
+
   void dibujar() {
     for (Muro muro : muros) {
       muro.dibujar();
     }
   }
-  
+
   void verificarColision(ArrayList<Bala> balas) {
     for (int i = balas.size() - 1; i >= 0; i--) {
       Bala bala = balas.get(i);
@@ -32,9 +32,11 @@ class GestorMurallas {
       }
     }
   }
-  
+
   boolean colision(Bala bala, Muro muro) {
-    return !(bala.posicion.x > muro.posicion.x + 40 || bala.posicion.x + 10 < muro.posicion.x ||
-             bala.posicion.y > muro.posicion.y + 40 || bala.posicion.y + 10 < muro.posicion.y);
+    return !(bala.transform.getX() > muro.transform.getX() + 40 ||
+             bala.transform.getX() + 10 < muro.transform.getX() ||
+             bala.transform.getY() > muro.transform.getY() + 40 ||
+             bala.transform.getY() + 10 < muro.transform.getY());
   }
 }
