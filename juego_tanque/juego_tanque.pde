@@ -31,12 +31,12 @@ void draw() {
 
   float deltaTime = Time.getDeltaTime(frameRate);
 
-  tanque.mover(deltaTime,500);
+  tanque.mover(deltaTime,200);
   tanque.dibujar();
 
   for (int i = balas.size() - 1; i >= 0; i--) {
     Bala bala = balas.get(i);
-    bala.mover(deltaTime, 700);
+    bala.mover(deltaTime, 1700);
     bala.dibujar();
 
     if (bala.transform.getY() < 0) {
